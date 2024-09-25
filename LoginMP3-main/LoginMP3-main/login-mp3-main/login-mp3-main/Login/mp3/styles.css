@@ -4,7 +4,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-* Custom Scrollbar */
+
+/* Custom Scrollbar */
 body::-webkit-scrollbar {
     width: 8px;
 }
@@ -17,6 +18,7 @@ body::-webkit-scrollbar-thumb {
     background-color: #1db954;
     border-radius: 10px;
 }
+
 /* Background Gradient */
 body {
     display: flex;
@@ -28,16 +30,19 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #fff;
+    padding: 10px; /* Ensure there's padding on smaller screens */
 }
 
 /* Spotify Logo */
 .spotify-logo {
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .spotify-logo img {
     width: 300px;
- height: auto;
+    height: auto;
+    max-width: 100%; /* Ensure image scales down on smaller devices */
 }
 
 /* Player Container */
@@ -45,6 +50,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .player {
@@ -58,7 +64,9 @@ body {
     border: 2px solid #1db954;
     max-width: 400px;
     width: 100%;
+    text-align: center; /* Center the text */
 }
+
 /* Glow Effect */
 .player {
     box-shadow: 0 0 20px #1db954, 0 0 40px #1db954, 0 0 60px #1db954;
@@ -122,8 +130,7 @@ body {
     animation: spin 3s linear infinite; /* Spin indefinitely while playing */
 }
 
-
-
+/* Play and Pause Buttons */
 .play-button, .pause-button {
     background-color: #1db954;
     border: none;
@@ -157,10 +164,27 @@ body {
 }
 
 /* Media Queries */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .player {
         padding: 15px;
-        width: 90%;
+        max-width: 95%; /* Ensure it scales well on tablets */
+    }
+
+    .cover {
+        width: 130px;
+        height: 130px;
+    }
+
+    .play-button, .pause-button {
+        font-size: 20px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .player {
+        padding: 10px;
+        width: 90%; /* Scale down for mobile screens */
     }
 
     .cover {
@@ -171,5 +195,26 @@ body {
     .play-button, .pause-button {
         font-size: 20px;
         padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .player {
+        padding: 10px;
+        width: 100%; /* Make full-width on very small screens */
+    }
+
+    .cover {
+        width: 100px;
+        height: 100px;
+    }
+
+    .play-button, .pause-button {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .spotify-logo img {
+        width: 250px; /* Scale down logo on very small devices */
     }
 }

@@ -6,7 +6,6 @@
 
 body {
   background: green;
-
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -33,7 +32,6 @@ body {
   text-align: center;
   width: 380px;
 }
-
 
 .login-box h2 {
   margin-bottom: 30px;
@@ -114,7 +112,6 @@ body {
 }
 
 .login-btn::before {
-  
   content: '';
   position: absolute;
   top: 50%;
@@ -140,4 +137,45 @@ body {
   position: relative;
   z-index: 2;
   font-weight: 600;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .login-box {
+    width: 90%;
+    padding: 40px 30px;
+  }
+
+  .login-box h2 {
+    font-size: 28px;
+  }
+
+  .user-box input, .user-box label {
+    font-size: 16px;
+  }
+
+  .login-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .login-box h2 {
+    font-size: 24px;
+  }
+
+  .user-box input, .user-box label {
+    font-size: 14px;
+  }
+
+  .login-btn {
+    font-size: 12px;
+    padding: 6px 15px;
+  }
 }
